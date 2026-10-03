@@ -1,0 +1,58 @@
+[
+  {
+    "ContainingType": "CS2Analyzer.API.Controllers.AuthController",
+    "Method": "Me",
+    "RelativePath": "api/auth/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CS2Analyzer.API.Controllers.AuthController",
+    "Method": "SteamCallback",
+    "RelativePath": "api/auth/steam/callback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CS2Analyzer.API.Controllers.AuthController",
+    "Method": "SteamLogin",
+    "RelativePath": "api/auth/steam/login",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CS2Analyzer.API.Controllers.StatsController",
+    "Method": "GetCurrentPlayers",
+    "RelativePath": "api/Stats/current-players",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CS2Analyzer.API.Controllers.StatsController",
+    "Method": "GetUserStats",
+    "RelativePath": "api/Stats/user/{steamId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "steamId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

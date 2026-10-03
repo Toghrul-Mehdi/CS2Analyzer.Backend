@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Core/">
+    <Project Path="src/Core/CS2Analyzer.Application/CS2Analyzer.Application.csproj" />
+    <Project Path="src/Core/CS2Analyzer.Domain/CS2Analyzer.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Infrastructure/CS2Analyzer.Infrastructure/CS2Analyzer.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/Presentation/CS2Analyzer.API/CS2Analyzer.API.csproj" />
+  </Folder>
+</Solution>
