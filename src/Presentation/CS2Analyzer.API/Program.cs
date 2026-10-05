@@ -1,4 +1,6 @@
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using CS2Analyzer.Application.Interfaces;
 using CS2Analyzer.Infrastructure.Options;
 using CS2Analyzer.Infrastructure.Services;
@@ -10,7 +12,10 @@ const string SteamProfileClientName = "SteamProfile";
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+// Enum-lar (silah kateqoriyası, xəritə rejimi) JSON-da "rifle", "armsRace" kimi yazılsın
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

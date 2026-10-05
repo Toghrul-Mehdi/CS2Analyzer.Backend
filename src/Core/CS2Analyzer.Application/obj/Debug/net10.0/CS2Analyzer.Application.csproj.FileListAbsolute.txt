@@ -9,3 +9,4 @@ C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Core\CS2Analyzer.Application\
 C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Core\CS2Analyzer.Application\obj\Debug\net10.0\refint\CS2Analyzer.Application.dll
 C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Core\CS2Analyzer.Application\obj\Debug\net10.0\CS2Analyzer.Application.pdb
 C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Core\CS2Analyzer.Application\obj\Debug\net10.0\ref\CS2Analyzer.Application.dll
+C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Core\CS2Analyzer.Application\obj\Debug\net10.0\CS2Analyzer.Application.sourcelink.json

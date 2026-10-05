@@ -70,13 +70,541 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerStatsDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerStatsDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerStatsDto"
+                }
+              }
+            }
           }
         }
       }
     }
   },
-  "components": { },
+  "components": {
+    "schemas": {
+      "AchievementStatsDto": {
+        "type": "object",
+        "properties": {
+          "unlocked": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CombatStatsDto": {
+        "type": "object",
+        "properties": {
+          "shotsFired": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trackedShots": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trackedHits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "accuracy": {
+            "type": "number",
+            "format": "double"
+          },
+          "knifeKills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "grenadeKills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "zeusKills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "enemyWeaponKills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blindedEnemyKills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "enemyWeaponKillShare": {
+            "type": "number",
+            "format": "double"
+          },
+          "blindedEnemyKillShare": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EconomyStatsDto": {
+        "type": "object",
+        "properties": {
+          "moneyEarned": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "moneyPerRound": {
+            "type": "number",
+            "format": "double"
+          },
+          "moneyPerMatch": {
+            "type": "number",
+            "format": "double"
+          },
+          "weaponsDonated": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FavoriteWeaponDto": {
+        "type": "object",
+        "properties": {
+          "definitionIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "shots": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "hits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "accuracy": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GunGameStatsDto": {
+        "type": "object",
+        "properties": {
+          "roundsPlayed": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundsWon": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundWinRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "matchesPlayed": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LastMatchStatsDto": {
+        "type": "object",
+        "properties": {
+          "rounds": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundsWon": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundsLost": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tRoundWins": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ctRoundWins": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "kills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "deaths": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "killDeathRatio": {
+            "type": "number",
+            "format": "double"
+          },
+          "mvps": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "damage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "averageDamagePerRound": {
+            "type": "number",
+            "format": "double"
+          },
+          "contributionScore": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "moneySpent": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxPlayers": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "favoriteWeapon": {
+            "$ref": "#/components/schemas/FavoriteWeaponDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MapMode": {
+        "enum": [
+          "defusal",
+          "hostage",
+          "armsRace",
+          "other"
+        ],
+        "type": "string"
+      },
+      "MapStatsDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "mode": {
+            "$ref": "#/components/schemas/MapMode"
+          },
+          "roundsPlayed": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundsWon": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundsLost": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundWinRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "roundShare": {
+            "type": "number",
+            "format": "double"
+          },
+          "matchesWon": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjectiveStatsDto": {
+        "type": "object",
+        "properties": {
+          "bombsPlanted": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "bombsDefused": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "hostagesRescued": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pistolRoundsWon": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "plantRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "defuseRate": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OverviewStatsDto": {
+        "type": "object",
+        "properties": {
+          "playTimeSeconds": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "playTimeHours": {
+            "type": "number",
+            "format": "double"
+          },
+          "kills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "deaths": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "killDeathRatio": {
+            "type": "number",
+            "format": "double"
+          },
+          "headshotKills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "headshotPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "mvps": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "matchesPlayed": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "matchesWon": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "matchWinRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "roundsPlayed": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundsWon": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roundWinRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "damageDone": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "averageDamagePerRound": {
+            "type": "number",
+            "format": "double"
+          },
+          "killsPerRound": {
+            "type": "number",
+            "format": "double"
+          },
+          "contributionScore": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PlayerStatsDto": {
+        "type": "object",
+        "properties": {
+          "steamId": {
+            "type": "string",
+            "nullable": true
+          },
+          "gameName": {
+            "type": "string",
+            "nullable": true
+          },
+          "overview": {
+            "$ref": "#/components/schemas/OverviewStatsDto"
+          },
+          "combat": {
+            "$ref": "#/components/schemas/CombatStatsDto"
+          },
+          "weapons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WeaponStatsDto"
+            },
+            "nullable": true
+          },
+          "weaponCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WeaponCategoryStatsDto"
+            },
+            "nullable": true
+          },
+          "maps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MapStatsDto"
+            },
+            "nullable": true
+          },
+          "objectives": {
+            "$ref": "#/components/schemas/ObjectiveStatsDto"
+          },
+          "economy": {
+            "$ref": "#/components/schemas/EconomyStatsDto"
+          },
+          "lastMatch": {
+            "$ref": "#/components/schemas/LastMatchStatsDto"
+          },
+          "gunGame": {
+            "$ref": "#/components/schemas/GunGameStatsDto"
+          },
+          "achievements": {
+            "$ref": "#/components/schemas/AchievementStatsDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeaponCategory": {
+        "enum": [
+          "pistol",
+          "smg",
+          "rifle",
+          "sniper",
+          "shotgun",
+          "heavy",
+          "melee",
+          "grenade",
+          "equipment",
+          "other"
+        ],
+        "type": "string"
+      },
+      "WeaponCategoryStatsDto": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "$ref": "#/components/schemas/WeaponCategory"
+          },
+          "kills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shots": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "hits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "accuracy": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "killShare": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeaponStatsDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "$ref": "#/components/schemas/WeaponCategory"
+          },
+          "kills": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shots": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "hits": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "accuracy": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "killShare": {
+            "type": "number",
+            "format": "double"
+          },
+          "shotsPerKill": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
   "tags": [
     {
       "name": "Auth"
