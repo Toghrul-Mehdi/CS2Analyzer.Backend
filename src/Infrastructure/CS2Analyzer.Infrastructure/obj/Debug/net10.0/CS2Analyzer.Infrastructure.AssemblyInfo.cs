@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS2Analyzer.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a12bd8cb0e22eb930b85afdd6f2b6c017aa577ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c18ae5dc09afe671afe5b3b425437d5ae96c00dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS2Analyzer.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS2Analyzer.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

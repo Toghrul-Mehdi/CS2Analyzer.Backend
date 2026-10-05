@@ -51,4 +51,4 @@ C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Presentation\CS2Analyzer.API\
 C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Presentation\CS2Analyzer.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Presentation\CS2Analyzer.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Presentation\CS2Analyzer.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Presentation\CS2Analyzer.API\bin\Debug\net10.0\secrets.json
+C:\Users\togru\Desktop\Programming\CS2Analyzer\src\Presentation\CS2Analyzer.API\obj\Debug\net10.0\CS2Analyzer.API.sourcelink.json
