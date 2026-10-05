@@ -30,6 +30,9 @@ internal class PlayerStatsData
 
     [JsonPropertyName("stats")]
     public List<SteamStatItem> Stats { get; set; } = new();
+
+    [JsonPropertyName("achievements")]
+    public List<SteamAchievementItem> Achievements { get; set; } = new();
 }
 
 internal class SteamStatItem
@@ -38,5 +41,14 @@ internal class SteamStatItem
     public string Name { get; set; } = string.Empty;
 
     [JsonPropertyName("value")]
-    public int Value { get; set; }
+    public long Value { get; set; }
+}
+
+internal class SteamAchievementItem
+{
+    [JsonPropertyName("name")]
+    public string Name { get; set; } = string.Empty;
+
+    [JsonPropertyName("achieved")]
+    public int Achieved { get; set; }
 }
